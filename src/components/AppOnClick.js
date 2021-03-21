@@ -8,6 +8,7 @@ export class AppOnClick extends Component {
     this.state = {
       number : this.props.num
     }
+    this.handleClick_one = this.handleClick_one.bind(this);
   }
 
   handleClick = (e) => {
@@ -19,12 +20,19 @@ export class AppOnClick extends Component {
     })
   }
 
+  handleClick_one () {
+    let count = this.state.number
+    this.setState ({
+      number : count + 1
+    })
+  }
+
   render () {
     return (
       <div className="AppOnClick">
         <span> {` ${this.state.number} `} </span>
         <button
-          onClick={this.handleClick}
+          onClick={this.handleClick_one}
         >
           클릭해주세요
         </button>

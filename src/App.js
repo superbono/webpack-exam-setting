@@ -17,15 +17,18 @@ export class App extends Component {
   render () {
     return (
       <div className="App">
+        <hr />
         <h1>hello!</h1>
+        <hr />
         <img src={Image}></img>
-        <hr></hr>
+        <hr />
         <AppState 
           text = {this.state.text}
         />
         <AppOnClick 
           num = {this.state.num}
-        />
+        /> <br />
+        <hr></hr>
       </div>
     )
   }
