@@ -29,7 +29,7 @@ module.exports = {
     filename : "bundle.js",
     path : path.resolve (__dirname + "/build")
   },
-  devServer : {
+  devServer :{
     port: 9000
   },
   mode : "none"
