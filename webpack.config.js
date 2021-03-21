@@ -1,6 +1,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry : "./src/index.js",
@@ -14,7 +15,33 @@ module.exports = {
             options: { minimize: true }
           }
         ]
-      }
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: "/node_modules",
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            /*options: {
+              limit: 10000,
+              name: 'images/[folder]/[name].[ext]',
+              esModule: true
+            }*/
+          },
+        ]
+      },
+      {
+        test: /\.txt$/,
+        use: 'raw-loader'
+      },
     ]
   },
   plugins : [
@@ -24,6 +51,9 @@ module.exports = {
       filename: 'index.html' // output으로 출력할 파일은 index.html 이다.
       /*filename : test.html로 할 경우 => http://localhost:9000/test.html*/
     }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    })
   ],
   output : {
     filename : "bundle.js",

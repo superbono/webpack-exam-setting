@@ -1,2 +1,5 @@
-console.log('test');
-console.log('test2');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {App} from '../src/App'
+
+ReactDOM.render (<App />, document.getElementById ('root'));
