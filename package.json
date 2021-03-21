@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "serve": "webpack serve",
+    "dev" : "webpack & webpack serve --mode development"
   },
   "author": "superbono",
   "license": "MIT",
