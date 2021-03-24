@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
-import '../src/style.css'
-import Image from '../asset/image_test.png'
-import {AppState} from './components/AppState'
-import {AppOnClick} from './components/AppOnClick'
+import '@/style.css'
+import Image from '@/asset/image_test.png'
+import {AppState} from '@/components/AppState'
+import {AppOnClick} from '@/components/AppOnClick'
 
 export class App extends Component {
 

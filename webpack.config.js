@@ -5,6 +5,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry : "./src/index.js",
+  resolve: {
+    alias: {
+        '@': path.resolve(__dirname, 'src'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@asset': path.resolve(__dirname, 'asset'),
+        '@public': path.resolve(__dirname, 'public')
+    },
+    extensions: ['.js', '.jsx', '.json','.css','png']
+  },
   module : {
     rules: [
       {
